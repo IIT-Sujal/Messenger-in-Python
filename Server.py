@@ -15,7 +15,7 @@ print('Ip Address of the Server::%s'%ip)
 
 def handleClient(client, uname):
     clientConnected = True
-    keys = clients.keys()
+    
     help = 'There are four commands in Messenger\n1::**chatlist=>gives you the list of the people currently online\n2::**quit=>To end your session\n3::**broadcast=>To broadcast your message to each and every person currently present online\n4::Add the name of the person at the end of your message preceded by ** to send it to particular person'
 
     while clientConnected:
@@ -25,6 +25,7 @@ def handleClient(client, uname):
             found = False
             if '**chatlist' in msg:
                 clientNo = 0
+                keys = clients.keys()
                 for name in keys:
                     clientNo += 1
                     response = response + str(clientNo) +'::' + name+'\n'
